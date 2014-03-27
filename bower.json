@@ -1,0 +1,22 @@
+{
+  "name": "grunt-f2e-boilerplate",
+  "version": "0.0.1",
+  "authors": [
+    "trinity <trinity@dummi.org>"
+  ],
+  "description": "Boilerplate for grunt based frontend(f2e) workflow",
+  "keywords": [
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "scut": "~0.10.2"
+  }
+}

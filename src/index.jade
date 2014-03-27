@@ -1,13 +1,10 @@
-doctype html
-include utility
-html
-  head
-    block meta
-      meta(charset="utf-8")
-      +viewport
-      +ua-compatible
-    title Project Boilerplate
-  body
-    center
-      h1 Under Construction ( •́ㅿ•̀ )
+extends framework
+append head
+  title Boilerplate
+append style
+  +stylesheet('style/common.css')
+append script
+  +javascript('script/main.js')
+append content
+  center: h1 Under Construction ( •́ㅿ•̀ )
 

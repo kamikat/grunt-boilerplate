@@ -14,10 +14,10 @@ Install [SCUT](http://davidtheclark.github.io/scut/) with `bower`
 
     $ bower install
 
-Asset
------
+Assets
+------
 
-Put asset in `asset` directory under the project root.
+Put assets in `asset` directory under the project root.
 
 `asset` directory will be **merged** into build directory by grunt in build process.
 (compiled unit have same name with asset shall overwrite that asset,
@@ -27,12 +27,58 @@ it's not recommended to have any asset that may has conflict with compiled unit)
 
 - When using `grunt watch`, the compiled unit will not be guaranteed to overwrite the asset file
 
-Option
-------
+Options
+-------
 
 Options can be passed through environment variables
 
     $ SERVER_PORT=8020 grunt devserver # Run devserver at port 8020
     $ RELOAD_PORT=1337 grunt watch     # Run livereload server at port 1337 (default 35729)
     $ BUILD_ROOT="dist/" grunt         # Set build root to "dist/" (default "build/")
+
+Tasks
+-----
+
+Boilerplate contains following grunt tasks
+
+- gruntfile (jshint)
+
+  Lint Gruntfile.js
+
+- asset (copy)
+
+  Copy assets to build directory.
+
+- style (sass, autoprefixer)
+
+  Build stylesheets with `node-sass` (native implementation).
+  Vendor prefixes are injected with `autoprefixer`,
+  please don't waste time writing vendor specific SASS/SCSS rules.
+
+- script (jshint, copy)
+
+  Copy javascript file to build directory after lint scripts.
+
+- document (jade)
+
+  Build all jade files from `src/` to html.
+
+- clean
+
+  Remove all contents in build directory.
+
+- watch
+
+  Daemon to automatically run tasks when source file changed.
+  LiveReload server is enabled by default.
+  See [documentation](https://github.com/gruntjs/grunt-contrib-watch#optionslivereload) for detail.
+
+- devserver
+
+  Run a server hosting static file service for development.
+
+License
+-------
+
+(The MIT License)
 

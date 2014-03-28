@@ -57,9 +57,7 @@ module.exports = function(grunt) {
 
     sass: {
       style: files.style.pattern,
-      options: {
-        includePaths: [ 'bower_components/scut/dist' ],
-      }
+      options: { }
     },
 
     autoprefixer: {
@@ -113,9 +111,9 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-devserver');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');

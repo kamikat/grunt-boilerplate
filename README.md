@@ -14,6 +14,10 @@ Install [SCUT](http://davidtheclark.github.io/scut/) with `bower`
 
     $ bower install
 
+A **ruby** installation is required and install `sass` with gem (required by `grunt-contrib-sass`)
+
+    $ gem install sass
+
 Assets
 ------
 
@@ -51,9 +55,12 @@ Boilerplate contains following grunt tasks
 
 - style (sass, autoprefixer)
 
-  Build stylesheets with `node-sass` (native implementation).
-  Vendor prefixes are injected with `autoprefixer`,
-  please don't waste time writing vendor specific SASS/SCSS rules.
+  Build stylesheets with `node-contrib-sass` (ruby implementation).
+  Native `node-sass` implementation is replaced becaused because it
+  cannot met spec of SASS completely.
+
+  Vendor prefixes are injected with `autoprefixer` task automatically,
+  so please don't waste time writing vendor specific SASS/SCSS rules.
 
 - script (jshint, copy)
 

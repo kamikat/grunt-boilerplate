@@ -17,6 +17,7 @@
     "tests"
   ],
   "devDependencies": {
-    "scut": "~0.10.2"
+    "scut": "~0.10.2",
+    "jquery": "~2.1.0"
   }
 }

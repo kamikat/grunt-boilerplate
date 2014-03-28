@@ -10,7 +10,7 @@ Install grunt and grunt plugins with
 
     $ npm install
 
-Install [SCUT](http://davidtheclark.github.io/scut/) with `bower`
+Install bower dependencies
 
     $ bower install
 
@@ -30,6 +30,26 @@ it's not recommended to have any asset that may has conflict with compiled unit)
 **Known Issue**
 
 - When using `grunt watch`, the compiled unit will not be guaranteed to overwrite the asset file
+
+Bower
+-----
+
+Dependencies installed by bower should typically under `devDependencies` section
+with `bower install --save-dev <package>`.
+
+Here are examples help setup a bower asset:
+
+`jQuery` is a javascript library that needs to be copied to `script/` directory of web root.
+Make symbolic links at `asset/script/` directory for
+every file in `bower_components/jquery/dist/` directory.
+And the library will be copied to `build/script/` by `copy:asset` task.
+
+[SCUT](http://davidtheclark.github.io/scut/)
+is a SASS library provide support for multiple generic CSS patterns.
+It is declared to be referenced by `src/style/common.scss`(`@import 'scut';`)
+and finally consumed by SASS at compile time.
+Similiar to jQuery reference, a symbolic link from `bower_components/scat/dist/_scut.scss`
+to `src/style/_scut.scss`.
 
 Options
 -------
